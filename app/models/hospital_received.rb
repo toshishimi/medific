@@ -1,0 +1,2 @@
+class HospitalReceived < ApplicationRecord
+end
