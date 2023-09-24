@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :hospital_received do
+  factory :receiced_hospital do
     
   end
 end
