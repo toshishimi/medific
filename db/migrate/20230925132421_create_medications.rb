@@ -6,7 +6,7 @@ class CreateMedications < ActiveRecord::Migration[6.0]
       t.integer :individual
       t.integer :days_supply
       t.text :notes
-      
+      t.references :received_date,          null: false,foreign_key: true
 
       t.timestamps
     end

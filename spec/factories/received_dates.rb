@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :receiveddate do
+  factory :received_date do
     
   end
 end
