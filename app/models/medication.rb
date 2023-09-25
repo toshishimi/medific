@@ -1,3 +1,3 @@
 class Medication < ApplicationRecord
-  belongs_to :receiveddate
+  belongs_to :received_date
 end
