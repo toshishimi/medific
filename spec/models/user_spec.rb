@@ -19,12 +19,19 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include("Name can't be blank")
       end
 
+      it "nameが半角では登録できない" do
+        @user.name = "ﾄﾄ"
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Name is invalid")
+      end
+
       it "name_kanaが空では登録できない" do
         @user.name_kana = ''
         @user.valid?
         expect(@user.errors.full_messages).to include("Name kana can't be blank")
       end
 
+      
       it "emailが空では登録できない" do
         @user.email = ''
         @user.valid?
