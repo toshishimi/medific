@@ -10,7 +10,7 @@ class ReceivedDatesController < ApplicationController
   end
   
   def create
-    @total_info = TotalInfo.new(received_date_params)
+    @total_info = TotalInfo.new(total_info_params)
     if @total_info.valid?
       @total_info.save
       redirect_to root_path, notice: "登録完了"
@@ -21,7 +21,7 @@ class ReceivedDatesController < ApplicationController
 
   private
 
-  def received_date_params
+  def total_info_params
     params.require(:total_info)
     .permit(:date, :hospital_name, :medicine_name, :timing, :individual, :days_supply, :notes, :image)
     .merge(user_id: current_user.id)
