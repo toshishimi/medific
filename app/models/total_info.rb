@@ -13,12 +13,12 @@ class TotalInfo
 
   validate :hospital_image_validation
 
-   def hospital_image_validation
-    if !self.image.content_type.in?(%('image/jpeg image/png'))
-    self.errors.add(:image, 'は JPEG 形式または PNG 形式のみ選択してください')
+  def hospital_image_validation
+    if self.image && !self.image.content_type.in?(%('image/jpeg image/png'))
+      self.errors.add(:image, 'は JPEG 形式または PNG 形式のみ選択してください')
+    end
   end
-  end
-
+   
   def save
     received_date = ReceivedDate.create(date: date, user_id: user_id)
     hospital = Hospital.create(hospital_name: hospital_name)
