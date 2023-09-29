@@ -18,7 +18,7 @@ class TotalInfo
       self.errors.add(:image, 'は JPEG 形式または PNG 形式のみ選択してください')
     end
   end
-
+   
   def save
     received_date = ReceivedDate.create(date: date, user_id: user_id)
     hospital = Hospital.new(hospital_name: hospital_name)
@@ -28,6 +28,7 @@ class TotalInfo
     Medication.create(
       medicine_name: medicine_name, timing: timing, individual: individual, days_supply: days_supply, notes: notes, received_date_id: received_date.id
     )
+    hospital.image.attach(image) 
   end
   
 end

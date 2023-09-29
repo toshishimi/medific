@@ -37,6 +37,9 @@
           <span class="indispensable">必須</span>
         </div>
         <%= f.text_area :hospital_name, class:"items-text", id:"item-info", placeholder:"病院名"  ,maxlength:"40" %>
+        <button type="button", onclick="checkIfOther()">
+        病院名を選択してください
+        </button>
       </div>
       <div id="medications">
         <div class="medication-fields">

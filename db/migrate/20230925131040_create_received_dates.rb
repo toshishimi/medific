@@ -2,8 +2,7 @@ class CreateReceivedDates < ActiveRecord::Migration[6.0]
   def change
     create_table :received_dates do |t|
       t.date :date,                    null: false
-      t.bigint :user_id, null: false
-      t.references :medication,        null: false,foreign_key: true
+      t.bigint :user_id,               null: false
 
       t.timestamps
     end
