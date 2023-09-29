@@ -1,4 +1,17 @@
 <%= render "shared/header" %>
-<h1>トップページ</h1>
+<h1>お薬一覧</h1>
+
+  <%# 商品一覧 %>
+  <div class='item-contents'>
+    <ul class='item-lists'>
+        <% @received_dates.each do |received_date| %> 
+          <li class='list'>
+          <%= link_to received_date.date.to_s, received_date_path(received_date)   %>
+          </li>
+        <% end %>  
+    </ul>
+  </div>
+  <%# /商品一覧 %>
+</div>
 
 <%= link_to '登録', new_received_date_path %>
