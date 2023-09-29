@@ -1,0 +1,41 @@
+<%= render "shared/header" %>
+
+<%# 商品の概要 %>
+<div class="item-show">
+  <div class="item-box">
+    <h2 class="name">
+       <%= @received_dates.date %>
+    </h2>
+   
+    <div class="item-price-box">
+      <h1 class="item-price">
+         <%= @hospitals.hospital_name %>
+      </h1>
+      <span class="item-postage">
+       <% @medications.each do |medication| %> 
+          <li class='list'>
+          <%= medication.medicine_name %>
+          <%= medication.timing %>
+          <%= medication.individual %>
+          <%= medication.days_supply %>
+          <%= medication.notes %>
+          </li>
+        <% end %>  
+      </span>
+    </div>
+      </span>
+      <span class="item-postage">
+      
+      </span>
+    </div>
+
+    <%# if user_signed_in? %>
+      <%# if current_user.id == @received_date.user_id %>
+        <%#= link_to "商品の編集", "#", method: :get, class: "item-red-btn" %>
+        <%#<p class="or-text">or</p>
+        <%#= link_to "削除", "#", method: :delete, class:"item-destroy" %>
+      <%# else %>
+        <%#= link_to "購入画面に進む", "#", class:"item-red-btn"%>
+      <%# end %>
+    <%# end %>
+

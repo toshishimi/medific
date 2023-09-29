@@ -3,6 +3,7 @@ class ReceivedDatesController < ApplicationController
 
 
   def index
+    @received_dates = ReceivedDate.all
   end
 
   def new
@@ -17,6 +18,12 @@ class ReceivedDatesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @received_dates = ReceivedDate.find(params[:id])
+    @hospitals = Hospital.find(params[:id])
+    @medications = Medication.all
   end
 
   private

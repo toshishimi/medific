@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_09_25_173603) do
+ActiveRecord::Schema.define(version: 2023_09_28_171038) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -59,13 +59,13 @@ ActiveRecord::Schema.define(version: 2023_09_25_173603) do
     t.index ["user_id"], name: "fk_rails_93f760da4a"
   end
 
-  create_table "received_hospitals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "received_hospis", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "hospital_id", null: false
     t.bigint "received_date_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["hospital_id"], name: "index_received_hospitals_on_hospital_id"
-    t.index ["received_date_id"], name: "index_received_hospitals_on_received_date_id"
+    t.index ["hospital_id"], name: "index_received_hospis_on_hospital_id"
+    t.index ["received_date_id"], name: "index_received_hospis_on_received_date_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -86,6 +86,6 @@ ActiveRecord::Schema.define(version: 2023_09_25_173603) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "medications", "received_dates"
   add_foreign_key "received_dates", "users"
-  add_foreign_key "received_hospitals", "hospitals"
-  add_foreign_key "received_hospitals", "received_dates"
+  add_foreign_key "received_hospis", "hospitals"
+  add_foreign_key "received_hospis", "received_dates"
 end
